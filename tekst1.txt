@@ -1,0 +1,6 @@
+dane zapisane fprintf: 125.314
+dane zapisane z calej lini:
+ 145.567
+dane zapisane znak po znaku:
+354.666 677.890
+ÿ
