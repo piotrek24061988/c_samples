@@ -2,9 +2,7 @@
 #include <string.h>
 #include <ctype.h>
 
-//
 // Check is program args contains string to encode
-//
 int isInputStringProvided(int argc, const char * argv[]) {
 	if(argc < 2) {
 		printf("no input sting to encode\n");
@@ -17,9 +15,7 @@ int isInputStringProvided(int argc, const char * argv[]) {
 	return 0;
 }
 
-//
 // Check is string to encode is correct and adjust it for further processing
-//
 int isInputStringCorrect(const char * inputString, char * outputString) {
 	//Convert input letters to low letters
 	int i;
@@ -39,9 +35,7 @@ int isInputStringCorrect(const char * inputString, char * outputString) {
 	return 0;
 }
 
-//
 // Perform encoding
-//
 void encode(const char * inputString, char * outputString) {
 
 	char prevChar = 0;//a
@@ -49,8 +43,7 @@ void encode(const char * inputString, char * outputString) {
 	char buffer[10];
 	sprintf(buffer, "");
 	
-	for(int i = 0; inputString[i]; i++)
-	{
+	for(int i = 0; inputString[i]; i++) {
 		if(inputString[i] != prevChar) {
 			//first sign
 			if(prevChar == 0) {
@@ -81,11 +74,7 @@ void encode(const char * inputString, char * outputString) {
 		strcat(outputString, "\0");
 	}
 }
-
-
-//
 // Perform decoding
-//
 void decode(const char * inputString, char * outputString) {
 	
 	int value = 0;
