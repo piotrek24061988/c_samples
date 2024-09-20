@@ -4,6 +4,8 @@
 
 #define SWAP(A, B) { typeof(A) C; C = A; A = B; B = C; } 
 
+
+//Complexity is O(n^2)
 void babSort(const char * in, char * out) {
 	
 	strcpy(out, in);
