@@ -43,6 +43,10 @@ void babSort(const char * in, char * out) {
 	}
 }
 
+int ownComp(const void * a, const void * b) {
+	
+	return ((*(char*)a) - (*(char*)b)); 
+}
 
 int main(int argc, const char * argv[]) {
 	
@@ -54,9 +58,15 @@ int main(int argc, const char * argv[]) {
 	char sorted[strlen(toSort)];
 	sprintf(sorted, "%s", '\0');
 	
-	printf("Input string is: %s\n", toSort);
+	printf("1)Input string is: %s\n", toSort);
 	babSort(toSort, sorted);
-	printf("Output string is: %s\n", sorted);
+	printf("1)Output string is: %s\n", sorted);
+	
+	char sorted2[strlen(toSort)];
+	strcpy(sorted2, toSort);
+	printf("2)Input string is: %s\n", sorted2);
+	qsort(sorted2, strlen(toSort), sizeof(toSort[0]), ownComp);
+	printf("2)Output string is: %s\n", sorted2);
 
     return 0;
 }
